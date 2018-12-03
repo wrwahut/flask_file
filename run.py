@@ -1,0 +1,29 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Jun 26 09:47:09 2018
+
+@author: wangrenwei
+"""
+
+from flask import Flask, make_response, after_this_request, jsonify,send_file, send_from_directory
+
+app = Flask(__name__)
+
+@app.route("/download_file", methods=["POST", "GET"])
+def download_file():
+    response = make_response(send_file("temp/file.apk"))
+    response.headers["Content-Disposition"] = "attachment; filename=file.apk;"
+    return response
+
+@app.route("/download", methods=["POST","GET"])
+def download():
+    return make_response(send_from_directory("data","temp/file.txt"))
+
+
+@app.route("/index", methods=["POST","GET"])
+def index():
+    return jsonify({"re":"200","msg":"success","data":{}})
+
+
+if __name__ == "__main__":
+    app.run(host="localhost", port = 10001)
