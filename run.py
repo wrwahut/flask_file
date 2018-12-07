@@ -14,6 +14,18 @@ def download_file():
     response = make_response(send_file("temp/file.apk"))
     response.headers["Content-Disposition"] = "attachment; filename=file.apk;"
     return response
+	
+@app.route("/download_chaohuxueyuan", methods=["POST", "GET"])
+def download_chaohuxueyuan():
+    response = make_response(send_file("temp/chaohuxueyuan.apk"))
+    response.headers["Content-Disposition"] = "attachment; filename=chaohuxueyuan.apk;"
+    return response
+	
+@app.route("/download_chizhou", methods=["POST", "GET"])
+def download_chizhou():
+    response = make_response(send_file("temp/chizhou.apk"))
+    response.headers["Content-Disposition"] = "attachment; filename=chizhou.apk;"
+    return response
 
 @app.route("/download", methods=["POST","GET"])
 def download():
