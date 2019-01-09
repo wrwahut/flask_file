@@ -40,7 +40,14 @@ def index():
 def api():
     args = request.json
     print "#################args=",args
-    return jsonify({"re":"200","msg":"success","data":{}})
+    billNo = args("billNo","")
+    text = """
+    <xml>
+    	<billNo>{billNo}</billNo>
+	<status></status>
+    </xml>
+    """.format(billNo = billNo)
+    return text
 
 
 if __name__ == "__main__":
