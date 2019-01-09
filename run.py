@@ -5,7 +5,7 @@ Created on Tue Jun 26 09:47:09 2018
 @author: wangrenwei
 """
 
-from flask import Flask, make_response, after_this_request, jsonify,send_file, send_from_directory
+from flask import Flask, make_response, after_this_request, jsonify,send_file, send_from_directory, request
 
 app = Flask(__name__)
 
@@ -34,6 +34,11 @@ def download():
 
 @app.route("/index", methods=["POST","GET"])
 def index():
+    return jsonify({"re":"200","msg":"success","data":{}})
+
+@app.route("/api", methods=["POST"])
+def index():
+    args = request.json
     return jsonify({"re":"200","msg":"success","data":{}})
 
 
