@@ -38,13 +38,13 @@ def index():
 
 @app.route("/api", methods=["POST"])
 def api():
-    args = request.json
+    args = request.form
     print "#################args=",args
     billNo = args.get("billNo","")
     text = """
     <xml>
     	<billNo>{billNo}</billNo>
-	<status></status>
+	<status>OK</status>
     </xml>
     """.format(billNo = billNo)
     return text
