@@ -37,7 +37,7 @@ def index():
     return jsonify({"re":"200","msg":"success","data":{}})
 
 @app.route("/api", methods=["POST"])
-def index():
+def api():
     args = request.json
     return jsonify({"re":"200","msg":"success","data":{}})
 
