@@ -43,7 +43,7 @@ def api():
     billNo = args.get("billno","")
     text = """
     <xml>
-    	<billNo>{billNo}</billNo>
+    	<billno>{billNo}</billno>
 	<status>OK</status>
     </xml>
     """.format(billNo = billNo)
