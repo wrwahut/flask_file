@@ -40,7 +40,7 @@ def index():
 def api():
     args = request.form
     print "#################args=",args
-    billNo = args.get("billNo","")
+    billNo = args.get("billno","")
     text = """
     <xml>
     	<billNo>{billNo}</billNo>
