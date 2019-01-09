@@ -40,7 +40,7 @@ def index():
 def api():
     args = request.json
     print "#################args=",args
-    billNo = args("billNo","")
+    billNo = args.get("billNo","")
     text = """
     <xml>
     	<billNo>{billNo}</billNo>
